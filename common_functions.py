@@ -8,7 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from time import sleep
 import chromedriver_autoinstaller
-from selenium_firefox import Firefox
 from pytest import mark
 import os
 import random
@@ -18,8 +17,7 @@ browser_driver = Driver()
 test_settings = TestSettings()
 
 
-def start_test(user_type=UserData.STANDARD_USER, browser=Browsers.FIREFOX
-               , url=URLs.SAUCE_DEMO, logging=True):
+def start_test(user_type=UserData.STANDARD_USER, browser=Browsers.CHROME, url=URLs.SAUCE_DEMO, logging=True):
     """
     Starts the test execution based on the browser & url provided
 
@@ -41,7 +39,8 @@ def start_test(user_type=UserData.STANDARD_USER, browser=Browsers.FIREFOX
     browser_driver.driver.get(url)
 
 
-def start_test_and_sign_in(user_type=UserData.STANDARD_USER, browser=Browsers.FIREFOX, url=URLs.SAUCE_DEMO, logging=True):
+def start_test_and_sign_in(user_type=UserData.STANDARD_USER, browser=Browsers.CHROME,
+                           url=URLs.SAUCE_DEMO, logging=True):
     """
     Starts the test execution based on the browser & url provided
 

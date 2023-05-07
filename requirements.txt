@@ -3,4 +3,3 @@ pytest==7.3.1
 selenium==4.9.0
 Appium-Python-Client==2.9.0
 pytest-html==3.2.0
-selenium_firefox==2.0.7
