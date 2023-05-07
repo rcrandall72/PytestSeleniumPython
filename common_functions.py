@@ -18,7 +18,8 @@ browser_driver = Driver()
 test_settings = TestSettings()
 
 
-def start_test(user_type=UserData.STANDARD_USER, browser="chrome", url=URLs.SAUCE_DEMO, logging=True):
+def start_test(user_type=UserData.STANDARD_USER, browser=Browsers.FIREFOX
+               , url=URLs.SAUCE_DEMO, logging=True):
     """
     Starts the test execution based on the browser & url provided
 
@@ -27,11 +28,11 @@ def start_test(user_type=UserData.STANDARD_USER, browser="chrome", url=URLs.SAUC
     :param url: The url to use for testing
     :param logging: The logging to use for testing
     """
-    if browser == "chrome":
+    if browser == Browsers.CHROME:
         chromedriver_autoinstaller.install()
         browser_driver.set_driver(webdriver.Chrome())
-    elif browser == "firefox":
-        browser_driver.set_driver(Firefox())
+    elif browser == Browsers.FIREFOX:
+        browser_driver.set_driver(webdriver.Firefox())
     else:
         os.system("killall 'Safari'")
         browser_driver.set_driver(webdriver.Safari())
@@ -40,7 +41,7 @@ def start_test(user_type=UserData.STANDARD_USER, browser="chrome", url=URLs.SAUC
     browser_driver.driver.get(url)
 
 
-def start_test_and_sign_in(user_type=UserData.STANDARD_USER, browser="chrome", url=URLs.SAUCE_DEMO, logging=True):
+def start_test_and_sign_in(user_type=UserData.STANDARD_USER, browser=Browsers.FIREFOX, url=URLs.SAUCE_DEMO, logging=True):
     """
     Starts the test execution based on the browser & url provided
 
@@ -94,7 +95,7 @@ def press_button(button_id, button_type=By.ID, iteration=0, text="", timeout=30,
             button_to_press[iteration].click()
 
         if wait:
-            sleep(1)
+            sleep(5)
         return text
 
 
