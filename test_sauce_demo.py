@@ -95,21 +95,21 @@ class TestSauceDemo:
         start_test_and_sign_in()
 
         # Open Twitter link
-        press_button(FooterPage.SOCIAL_TWITTER)
-        browser_driver.driver.switch_to.window(browser_driver.driver.window_handles[-1])
+        press_button(FooterPage.SOCIAL_TWITTER, wait=True)
+        browser_driver.driver.switch_to.window(browser_driver.driver.window_handles[1])
         assert browser_driver.driver.current_url == FooterPage.TWITTER_URL
 
         # Open Facebook
         browser_driver.driver.switch_to.window(browser_driver.driver.window_handles[0])
-        press_button(FooterPage.SOCIAL_FACEBOOK)
-        browser_driver.driver.switch_to.window(browser_driver.driver.window_handles[-1])
+        press_button(FooterPage.SOCIAL_FACEBOOK, wait=True)
+        browser_driver.driver.switch_to.window(browser_driver.driver.window_handles[1])
         assert browser_driver.driver.current_url == FooterPage.FACEBOOK_URL
 
         # Open LinkedIn
         browser_driver.driver.switch_to.window(browser_driver.driver.window_handles[0])
-        press_button(FooterPage.SOCIAL_FACEBOOK)
-        browser_driver.driver.switch_to.window(browser_driver.driver.window_handles[-1])
-        assert browser_driver.driver.current_url == FooterPage.FACEBOOK_URL
+        press_button(FooterPage.SOCIAL_LINKEDIN, wait=True)
+        browser_driver.driver.switch_to.window(browser_driver.driver.window_handles[1])
+        assert browser_driver.driver.current_url == FooterPage.LINKEDIN_URL
 
     @staticmethod
     def test_sort_products():
