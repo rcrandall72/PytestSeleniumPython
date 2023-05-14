@@ -22,7 +22,7 @@ class TestSauceDemo:
         assert browser_driver.get_driver().current_url == URLs.SAUCE_DEMO
 
     @staticmethod
-    def test_login_with_locked_user(browser):
+    def test_cannot_login_with_locked_user(browser):
         """
         Tests a user cannot successfully log in with a locked user
         """
